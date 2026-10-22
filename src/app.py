@@ -44,9 +44,13 @@ async def mostrar(dest, contenedor, tipo: str, etiqueta: str, color: str):
           for m in mensajes:
             with ui.card().classes("w-full p-4 shadow-sm"):
               with ui.row().classes("items-center justify-between w-full"):
-                ui.label(f"Remitente: {m['Remitente']}").classes(
-                    "font-semibold"
-                )
+                with ui.row().classes("items-center gap-3"):
+                  ui.label(f"Remitente: {m['Remitente']}").classes(
+                      "font-semibold"
+                  )
+                  ui.label(f"{m['Fecha']} {m['Hora']}").classes(
+                      "text-sm text-gray-500"
+                  )
                 ui.badge(etiqueta, color=color)
               ui.separator().classes("my-2")
               ui.label(m["Mensaje"]).classes("whitespace-pre-line")

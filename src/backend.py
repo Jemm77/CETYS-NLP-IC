@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 buzon_spam = {}
 buzon = {}
-modelo = joblib.load("spam_pipeline.joblib")
+modelo = joblib.load('./models/spam_pipeline.joblib')
 el_json = Path("mensajes.json")
 
 # Para cargar los mensajes que ya teniamos
@@ -32,7 +32,7 @@ for dest, msgs in messages.items():
   for m in msgs:
     target = buzon_spam if m["spam"] == 1 else buzon
     target.setdefault(dest, []).append(
-        {"Remitente": m["from"], "Mensaje": m["mes"]}
+        {"Remitente": m["from"], "Mensaje": m["mes"], "Fecha": m["date"], "Hora": m["hour"]}
     )
 
 def save_msg():
@@ -72,8 +72,8 @@ def enviar(datos: dict) -> None:
 @app.get("/api/mostrar/{destinatario}")
 def mostrar(destinatario:str) -> None:
    return {
-      "bandeja": buzon.get(destinatario,[]),
-      "spam": buzon_spam.get(destinatario,[])
+        "bandeja": buzon.get(destinatario,[]),
+        "spam": buzon_spam.get(destinatario,[]),
    }
 
 if __name__ == "__main__":

@@ -23,10 +23,8 @@ def load_dataset(path: Path | None = None) -> pd.DataFrame:
     if path is None:
         path = get_activity_root() / "data" / "SMSSpamCollection"
     if not path.is_file():
-        raise FileNotFoundError(
-           f"Expected 12,500 reviews in {directory}. "
-                "Download and extract the complete IMDb dataset; see README.md."
-        )
+        raise FileNotFoundError()
+    
     df = pd.read_csv(path, sep="\t", header=None, names=["label", "text"], encoding="utf-8")
     df["label"] = (df["label"] == "spam").astype(int)  
     # \0 ham y 1 es spam
