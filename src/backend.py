@@ -80,8 +80,7 @@ def mostrar(destinatario:str) -> None:
         "bandeja": buzon.get(destinatario,[]),
         "spam": buzon_spam.get(destinatario,[]),
    }
-
-uvicorn.run(app, host="127.0.0.1", port=8000)
-
+if __name__ == "__main__":
+   uvicorn.run(app, host="127.0.0.1", port=8000)
    
    
