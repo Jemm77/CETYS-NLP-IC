@@ -6,3 +6,5 @@ httpx
 scipy
 fastapi
 uvicorn
+jupyterlab==4.6.4
+ipykernel==7.4.0
