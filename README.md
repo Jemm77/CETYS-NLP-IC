@@ -36,3 +36,5 @@ Ejectutar en otra terminal
 
 python src/app.py
 
+IMPORTANTE:
+Si esta reiniciando el historial de mensajes de la aplicacion es importante que lo haga eliminando el archivo json, no borrando su contenido, en caso de que unicamente borre el contenido la aplicacion no funcionara.
