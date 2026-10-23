@@ -1,4 +1,4 @@
-
+#Este archivo fue generado por IA generativa para ayudarnos con el despliegue de la informacion
 from httpx import AsyncClient
 from nicegui import ui
 
