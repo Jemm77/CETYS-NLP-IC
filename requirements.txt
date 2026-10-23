@@ -2,3 +2,7 @@ nicegui
 pandas
 scikit-learn>=1.8,<2
 joblib
+httpx
+scipy
+fastapi
+uvicorn

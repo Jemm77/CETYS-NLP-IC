@@ -1,5 +1,9 @@
 Repositorio del segundo proyecto de la materia de Inteligencia computacional
 
+Es necesario descargar el data set de SMS Spam Collection de UCI del siguiente 
+https://archive.ics.uci.edu/dataset/228/sms%2Bspam%2Bcollection y colocarlo en una carpeta dentro del proyecto llamada "data"
+
+
 Para la ejecuccion correcta de este proyecto es necesario utilizar python dentro de un entorno virtual.
 Dentro de la terminal ejecutar los siguientes comandos:
 
@@ -17,7 +21,9 @@ mkdir models
 python src/load_data.py
 python src/preprocessors.py
 
+El siguiente comando es opcional de ejecutar, se usa para hacer comparaciones con TFIDF
 python -m src.tfidf
+
 python -m src.train
 
 El modelo ahora esta entrenado.
