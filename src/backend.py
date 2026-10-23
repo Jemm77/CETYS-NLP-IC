@@ -56,7 +56,7 @@ def enviar(datos: dict) -> None:
     destino = buzon_spam if spam else buzon
     destino.setdefault(destinatario, []).append(
         {"Remitente": m["from"], "Mensaje": m["mes"], "Fecha": m["date"], "Hora": m["hour"]}
-    )ç
+    )
     messages.setdefault(destinatario, []).append({
     "from": remitente,
     "mes": contenido,
